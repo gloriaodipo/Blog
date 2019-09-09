@@ -9,12 +9,17 @@ gem 'rails', '~> 5.2.3'
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
+
+# Authentication
+gem 'jwt'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
+
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -37,9 +42,14 @@ group :development, :test do
   gem 'faker'
   gem 'pry'
   gem 'rspec-rails', '~> 3.8'
+  gem 'capybara', '~> 2.13'
+  gem 'selenium-webdriver'
+  gem 'factory_bot_rails', '~> 5.0'
   gem 'rubocop', require: false
   gem 'rubocop-performance'
   gem 'shoulda-matchers', '~> 4.1'
+  gem 'rb-readline'
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -49,6 +59,11 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :test do
+  gem 'shoulda-matchers', '~> 4.1'
+  gem 'faker'
+  gem 'database_cleaner'
+end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
