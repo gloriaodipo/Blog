@@ -10,7 +10,6 @@ class UsersController < ApplicationController
 
   #GET username
   def show
-    # binding.pry
     render json: @user, status: :ok
   end
 
